@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <html>
 	<head>
 	<!-- book.jsp -->
@@ -11,30 +14,37 @@
 	          <%/*<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>*/%>
 	        </div>
 		</div>
-		<div class="container text-center" id="tasksDiv">
-			<h3>My books</h3>
-			<hr>
-			<div class="table-responsive">
-				<table class="table table-striped table-bordered text-left">
-					<thead>
-						<tr>
-							<th>Id</th>
-							<th>Name</th>
-							<th>Description</th>
-							<th>Date Created</th>
-							<th>Finished</th>
-							<th></th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>
-			</div>
+		<div class="container">
+			<c:forEach var="book" items="${books}">
+			  	<div class="card border-secondary mb-3" style="max-width: 20rem;">
+				  <div class="card-header">Author</div>
+				  <div class="card-body">
+				    <h4 class="card-title">${book.name}</h4>
+				    <p class="card-text">${book.description}</p>
+				    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+				  </div>
+				</div>
+			</c:forEach>
 		</div>
 	</body>
 </html>
+
 <%/* TODO: remove if not needed
+<div class="container">
+<div class="row">
+	<c:forEach var="book" items="${books}">
+		<div class="col-md-4">
+	        <h2>${book.name}</h2>
+	        <p>${book.description}</p>
+	        <p><fmt:formatDate pattern="yyyy-MM-dd" value="${book.changedAt}"/></p>
+	        <!-- TODO: implement detail view<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p> -->
+	      </div>
+	</c:forEach>
+</div>
+<hr>
+</div>
+
+
 <c:choose>
 		<c:when test="${mode == 'MODE_TASKS'}">
 			

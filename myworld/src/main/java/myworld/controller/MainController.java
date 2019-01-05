@@ -5,7 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
+import myworld.model.Book;
 import myworld.service.BookService;
 
 @Controller
@@ -22,7 +24,7 @@ public class MainController {
 	
 	@GetMapping("/book")
 	public String allBooks(HttpServletRequest request) {
-		//request.setAttribute("books", bookService.findAll());
+		request.setAttribute("books", bookService.findAll());
 		return "book";
 	}
 }
