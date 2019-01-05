@@ -13,8 +13,8 @@
 	<meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT">
 	
 	<title>Cadoc's Page</title>
-	<link href="static/css/bootstrap.min.css" rel="stylesheet">
-	<script src="static/js/bootstrap.min.js"></script>
+	<link href="static/css/bootstrap.css" rel="stylesheet">
+	<script src="static/js/bootstrap.js"></script>
 	
 	<!--[if lt IE 9]>
 		<script src="static/js/html5shiv.min.js"></script>
