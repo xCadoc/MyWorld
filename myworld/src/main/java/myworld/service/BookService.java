@@ -21,7 +21,7 @@ public class BookService {
 	}
 	
 	public List<Book> findAll() {
-		List<Book> books = new ArrayList();
+		List<Book> books = new ArrayList<Book>();
 		for (Book book : bookRepository.findAll()) {
 			books.add(book);
 		}
