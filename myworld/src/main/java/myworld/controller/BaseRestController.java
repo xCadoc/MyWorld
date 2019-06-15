@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
+
 import myworld.model.Book;
 import myworld.service.BookService;
 
@@ -23,7 +25,8 @@ public class BaseRestController {
 	
 	@GetMapping("/rest/book/all-books")
 	public String allBooks() {
-		return bookService.findAll().toString();
+		return new Gson().toJson(bookService.findAll());
+
 	}
 	
 	@GetMapping("/rest/book/save")
