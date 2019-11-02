@@ -37,8 +37,8 @@ class Books extends Component {
 							<div class="card border-secondary mb-3" style={{maxWidth: '20rem'}}>
 								<div class="card-header">Author</div>
 								<div class="card-body">
-									<h4 class="card-title">${book.name}</h4>
-									<p class="card-text">${book.description}</p>
+									<h4 class="card-title">{book.name}</h4>
+									<p class="card-text">{book.description}</p>
 							    	<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
 								</div>
 							</div>
