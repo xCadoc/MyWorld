@@ -4,15 +4,16 @@ import { BrowserRouter} from 'react-router-dom';
 /**
  * Import all page components here
  */
+import NavBar from './NavBar';
 import MainPage from './MainPage';
 import Books from './Books';
-import NavBar from './NavBar';
-
+import BookWorkshop from './BookWorkshop';
 /**
  * Constants for the paths. 
  * Use them for the routes.
  */
 const booksRoute = "/books";
+const bookWorkshopRoute = "/bookWorkshop";
 
 /**
  * All routes go here.
@@ -24,6 +25,7 @@ export default (
 	  <NavBar />    
       <Route path="/" component={MainPage} />
       <Route path={booksRoute} component={Books} />
+      <Route path={bookWorkshopRoute} component={BookWorkshop} />
     </div>
   </BrowserRouter>
 );

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { CardDeck, Card, NavItem} from 'react-bootstrap';
+import testCover from'./images/eragon_1.jpg';
 
 class Books extends Component {
 
@@ -28,24 +30,26 @@ class Books extends Component {
 			<div className="Books">
      			<div class="jumbotron">
 					<div class="container">
-			        	<h1 class="display-3">My Books!</h1>
+			        	<h1 class="display-4">My Books!</h1>
 						<p>This selection of books I've read. Here I also review and rate them.</p>
 					</div>
 				</div>
-					<div class="container">
-						{books.map(book => (
-							<div class="card border-secondary mb-3" style={{maxWidth: '20rem'}}>
-								<div class="card-header">Author</div>
-								<div class="card-body">
-									<h4 class="card-title">{book.name}</h4>
-									<p class="card-text">{book.description}</p>
-							    	<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-								</div>
-							</div>
-							
-						))};
-					</div> 
-		        }
+				<div class="container">
+				  <CardDeck>
+					  {books.map(book => (
+						  <Card style={{maxWidth: '20rem'}}>
+						      <Card.Img variant="top" src={testCover} />
+						      <Card.Body>
+						          <Card.Title>{book.name}</Card.Title>
+						          <Card.Text>{book.description}</Card.Text>
+						      </Card.Body>
+						      <Card.Footer>
+						          <small className="text-muted">Last updated 3 mins ago</small>
+						      </Card.Footer>
+						  </Card>
+					  ))}
+				  </CardDeck>
+		    	</div>
 		    </div>
 		  );
 	}

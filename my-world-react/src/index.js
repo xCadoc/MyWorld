@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import NavBar from './NavBar';
 import App from './App';
 import MainPage from './MainPage';
-import NavBar from './NavBar';
 import Books from './Books';
 import { BrowserRouter} from 'react-router-dom';
 import { Route, IndexRoute } from 'react-router';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
