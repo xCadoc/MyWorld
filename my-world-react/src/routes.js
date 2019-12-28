@@ -12,8 +12,8 @@ import BookWorkshop from './BookWorkshop';
  * Constants for the paths. 
  * Use them for the routes.
  */
-const booksRoute = "/books";
-const bookWorkshopRoute = "/bookWorkshop";
+const booksRoute = "https://master.drcgr8fdnlak0.amplifyapp.com/books";
+const bookWorkshopRoute = "https://master.drcgr8fdnlak0.amplifyapp.com/bookWorkshop";
 
 /**
  * All routes go here.
