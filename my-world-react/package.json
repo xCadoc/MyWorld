@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React Hello World",
   "main": "index.js",
-  "homepage": "https://master.drcgr8fdnlak0.amplifyapp.com/my-world-react/",
+  "homepage": "https://master.drcgr8fdnlak0.amplifyapp.com/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
