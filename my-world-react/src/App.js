@@ -13,8 +13,8 @@ import background from'./images/background_paper_1.png';
  * Constants for the paths. 
  * Use them for the routes.
  */
-const booksRoute = "https://master.drcgr8fdnlak0.amplifyapp.com/books";
-const bookWorkshopRoute = "https://master.drcgr8fdnlak0.amplifyapp.com/bookWorkshop";
+const booksRoute = "/books";
+const bookWorkshopRoute = "/bookWorkshop";
 
 const App = () => (
   <BrowserRouter>
