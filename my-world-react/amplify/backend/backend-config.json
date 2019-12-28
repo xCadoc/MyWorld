@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"myworldf4ece89d": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}

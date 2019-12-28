@@ -9,7 +9,10 @@ import { BrowserRouter} from 'react-router-dom';
 import { Route, IndexRoute } from 'react-router';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Amplify from 'aws-amplify'
+import config from './aws-exports'
 
+Amplify.configure(config)
 ReactDOM.render(<App />, document.getElementById('root'));
 
 

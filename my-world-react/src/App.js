@@ -9,6 +9,8 @@ import { render } from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom'
 import background from'./images/background_paper_1.png';
 
+import { withAuthenticator } from 'aws-amplify-react' 
+
 /**
  * Constants for the paths. 
  * Use them for the routes.
@@ -29,4 +31,4 @@ const App = () => (
 
 // TODO: add serverless backend: https://docs.aws.amazon.com/de_de/amplify/latest/userguide/deploy-backend.html
 
-export default App;
+export default withAuthenticator(App);

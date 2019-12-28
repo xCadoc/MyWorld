@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './NavBar.css';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, NavItem} from 'react-bootstrap';
 
@@ -6,7 +7,7 @@ class NavBar extends Component {
 	render() {
 	  	return (
             <div>
-                <Navbar bg="dark" variant="dark">
+                <Navbar variant="dark">
                     <Navbar.Brand href="/">Book World</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
