@@ -41,7 +41,6 @@
     -webkit-transition:  box-shadow .25s ease-in;
 }
 
-nav {
-	box-shadow: 1px 8px 20px grey;
+.jumbotron {
+	background-color: white !important;
 }
-

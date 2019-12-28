@@ -6,7 +6,7 @@ class BookWorkshop extends Component {
 			<div className="BookWorkshop">
 					<div className="jumbotron">
 						<div className="container">
-				        	<h1 className="display-3">My Books!</h1>
+				        	<h1 className="display-4">My Books!</h1>
 							<p>This selection of books I've read. Here I also review and rate them.</p>
 						</div>
 					</div>
