@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "React Hello World",
   "main": "index.js",
+  "homepage": "https://master.drcgr8fdnlak0.amplifyapp.com/my-world-react/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -12,6 +13,7 @@
   "author": "CodeMix",
   "license": "ISC",
   "dependencies": {
+    "aws-amplify": "^2.2.1",
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.14",
