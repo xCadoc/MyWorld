@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/book",
+            "lambdaFunction": "mainlambda",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "book",
+    "apiName": "book",
+    "functionArns": [
+        {
+            "lambdaFunction": "mainlambda"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-myworld-prod-140737-authRole",
+        "unAuthRoleName": "amplify-myworld-prod-140737-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "mainlambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
