@@ -1,15 +1,20 @@
-import React, {useEffect, useState} from 'react';
 import { CardDeck, Card, NavItem} from 'react-bootstrap';
 import testCover from'./images/eragon_1.jpg';
-import {API} from 'aws-amplify'
+import {API} from 'aws-amplify';
+import React, {Component} from 'react';
 
-function Books () {
+class Books extends Component {
 
-	const [bookData, updateBookData] = useState([])
-
-	/*
+	constructor(props) {
+		super(props);
+		this.state = {
+			books: [],
+			isLoaded: false,
+		}
+	}
+	
 	componentDidMount() {
-		fetch('http://localhost:8080/rest/book/all-books')
+		fetch('http://myworld-env.up6drkfwhy.eu-central-1.elasticbeanstalk.com/rest/book/all-books')
 			.then(res => res.json())
 			.then(json => {
 				this.setState({
@@ -17,48 +22,38 @@ function Books () {
 					isLoaded: true,
 				})
 			});
-	}*/
-	
-	async function callApi() {
-		try {	
-			const bookData = await API.get('book', '/book')
-			console.log('bookData: ', bookData);
-			updateBookData(bookData.book)
-		} catch (err) {
-			console.log(err);
-		}
 	}
-
-	useEffect(() => {
-		callApi()
-	}, [])
-
-	return (
-		<div className="Books">
- 			<div className="jumbotron">
-				<div className="container">
-		        	<h1 className="display-4">My Books!</h1>
-					<p>This selection of books I've read. Here I also review and rate them.</p>
+	
+	render() {
+		var { books, isLoaded } = this.state;
+	
+		return (
+			<div className="Books">
+	 			<div className="jumbotron">
+					<div className="container">
+			        	<h1 className="display-4">My Books!</h1>
+						<p>This selection of books I've read. Here I also review and rate them.</p>
+					</div>
 				</div>
-			</div>
-			<div className="container">
-			  <CardDeck>
-				  {bookData.map(book => (
-					  <Card style={{maxWidth: '20rem'}}>
-					      <Card.Img variant="top" src={testCover} />
-					      <Card.Body>
-					          <Card.Title>{book.name}</Card.Title>
-					          <Card.Text>{book.description}</Card.Text>
-					      </Card.Body>
-					      <Card.Footer>
-					          <small className="text-muted">Last updated 3 mins ago</small>
-					      </Card.Footer>
-					  </Card>
-				  ))}
-			  </CardDeck>
-	    	</div>
-	    </div>
-	  );
+				<div className="container">
+				  <CardDeck>
+					  {books.map(book => (
+						  <Card style={{maxWidth: '20rem'}}>
+						      <Card.Img variant="top" src={testCover} />
+						      <Card.Body>
+						          <Card.Title>{book.name}</Card.Title>
+						          <Card.Text>{book.description}</Card.Text>
+						      </Card.Body>
+						      <Card.Footer>
+						          <small className="text-muted">Last updated 3 mins ago</small>
+						      </Card.Footer>
+						  </Card>
+					  ))}
+				  </CardDeck>
+		    	</div>
+		    </div>
+		  );
+	}
 }
 
 export default Books;
