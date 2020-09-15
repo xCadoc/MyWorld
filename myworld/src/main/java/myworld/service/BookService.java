@@ -3,6 +3,7 @@ package myworld.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,6 +15,7 @@ import myworld.model.Book;
 @Transactional
 public class BookService {
 	
+	@Autowired
 	private final BookRepository bookRepository;
 
 	public BookService(BookRepository bookRepository) {
@@ -33,8 +35,6 @@ public class BookService {
 	}
 	
 	public void deleteBookById(int id) {
-		bookRepository.deleteById(id);;
+		bookRepository.deleteById(id);
 	}
-	
-
 }

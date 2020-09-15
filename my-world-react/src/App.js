@@ -29,6 +29,4 @@ const App = () => (
   </BrowserRouter>
 );
 
-// TODO: add serverless backend: https://docs.aws.amazon.com/de_de/amplify/latest/userguide/deploy-backend.html
-
 export default withAuthenticator(App);

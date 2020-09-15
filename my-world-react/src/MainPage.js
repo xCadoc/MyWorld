@@ -4,8 +4,8 @@ function MainPage() {
   return (
     <div class="jumbotron">
         <div class="container">
-          <h1 class="display-4">Hello everybody!</h1>
-          <p>This is my small webpage for trying out new stuff and sharing some boring and usless content :)</p>
+          <h1 class="display-4">Welcome to MyTomes.com!</h1>
+          <p>Mange you books and review them on MyTomes.</p>
         </div>
 	</div>
   );

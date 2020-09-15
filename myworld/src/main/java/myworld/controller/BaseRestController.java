@@ -30,8 +30,8 @@ public class BaseRestController {
 	}
 	
 	@GetMapping("/rest/book/save")
-	public String saveBook(@RequestParam String name, @RequestParam String desc) {
-		bookService.save(new Book(name, desc, new Date(), new Date()));
+	public String saveBook(@RequestParam String isbn, @RequestParam String title) {
+		bookService.save(new Book(isbn, title));
 		return "Book saved!";
 	}
 	
