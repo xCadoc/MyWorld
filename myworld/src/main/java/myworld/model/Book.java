@@ -19,18 +19,21 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 // TODO: https://www.baeldung.com/spring-data-dynamodb
 @DynamoDBTable(tableName = "books-master") // TODO: replace with books-XXX from properties
-@Entity
 public class Book implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String id;
 	private String isbn;
-	private String name;
+	private String title;
+	private String series;
+	private int number;
 
-	public Book(String isbn, String name) {
+	public Book(String isbn, String title) {
 		this.isbn = isbn;
-		this.name = name;
+		this.title = title;
 	}
+	
+	public Book() {}
 
 	@Id
 	@DynamoDBHashKey
@@ -45,8 +48,18 @@ public class Book implements Serializable {
 	}
 
 	@DynamoDBAttribute
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
+	}
+	
+	@DynamoDBAttribute
+	public String getSeries() {
+		return series;
+	}
+
+	@DynamoDBAttribute
+	public int getNumber() {
+		return number;
 	}
 
 	public void setId(String id) {
@@ -57,7 +70,16 @@ public class Book implements Serializable {
 		this.isbn = isbn;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
+
+	public void setSeries(String series) {
+		this.series = series;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
 }

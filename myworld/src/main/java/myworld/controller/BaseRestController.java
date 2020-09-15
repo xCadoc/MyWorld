@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
+import myworld.repository.BookRepository;
 import myworld.model.Book;
-import myworld.service.BookService;
 
 @RestController
 public class BaseRestController {
 
 	@Autowired
-	private BookService bookService;
+	private BookRepository bookRepository;
 	
 	@GetMapping("/rest")
 	public String hello() {
@@ -25,19 +25,21 @@ public class BaseRestController {
 	
 	@GetMapping("/rest/book/all-books")
 	public String allBooks() {
-		return new Gson().toJson(bookService.findAll());
+		return new Gson().toJson(bookRepository.findAll());
 
 	}
 	
+	/*
 	@GetMapping("/rest/book/save")
 	public String saveBook(@RequestParam String isbn, @RequestParam String title) {
-		bookService.save(new Book(isbn, title));
+		bookRepository.save(new Book(isbn, title));
 		return "Book saved!";
 	}
 	
 	@GetMapping("/rest/book/delete")
 	public String deleteBookById(@RequestParam int id) {
-		bookService.deleteBookById(id);
+		bookRepository.deleteBookById(id);
 		return "Book deleted!";
 	}
+	*/
 }
